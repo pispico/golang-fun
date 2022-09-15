@@ -5,7 +5,7 @@ import "time"
 const IssueURL = "https://api.github.com/search/issues"
 
 type IssueSearchResult struct {
-	TotalCount int
+	TotalCount int `json:"total_count"`
 	Items      []*Issue
 }
 
@@ -15,7 +15,7 @@ type Issue struct {
 	Title     string
 	State     string
 	User      *User
-	CreatedAt time.Time
+	CreatedAt time.Time `json:"created_at"`
 	Body      string
 }
 
